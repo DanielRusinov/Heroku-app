@@ -16,12 +16,13 @@ def quad
 
 	if( a < 0)
 		puts "Diskriminantata e pod 0 e pedal"
-	elsif( a = 0)
+	elsif( a == 0)
 		x = -b / (2 * a)
 	else x = (-b + Math.sqrt(d)) / (2 * a)
 		y = (-b - Math.sqrt(d)) / (2 * a)
+	end
 
-	render html: x, y
+	render html: "x1 = #{x}, x2 = #{y}"  
 end
 
   protect_from_forgery with: :exception
