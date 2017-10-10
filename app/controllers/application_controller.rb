@@ -10,6 +10,7 @@ def sums
 	sum = 0
 	csv.each do |row|
   		sum = sum + row[0]
+	end
 	
 	render plain: "%.2f" % sum.ceil
 end
