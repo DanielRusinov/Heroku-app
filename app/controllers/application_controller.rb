@@ -10,7 +10,7 @@ def sums
 	p cvs
 	sum = 0
 	csv.each do |row|
-  		sum = sum + row[0]
+  		sum = sum + row[0].to_f
 	end
 	
 	render plain: "%.2f" %sum.ceil
