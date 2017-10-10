@@ -43,7 +43,5 @@ end
 #	render html: "x1 = #{x}, x2 = #{y}"  
 #end
 
-  
-end
 
 
