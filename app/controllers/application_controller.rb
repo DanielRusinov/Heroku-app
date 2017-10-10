@@ -1,5 +1,20 @@
+require 'csv'
+
 class ApplicationController < ActionController::Base
-	protect_from_forgery with: :exception
+	protect_from_forgery with: :null_sessions
+
+def sums
+	csv_file = File.read(params[:file])
+	csv = CSV.parse(csv_file, converters: :numeric)
+	
+	sum = 0
+	csv.each do |row|
+  		sum = sum + row[0]
+		sum = sum.ceil
+end
+
+end 
+
 
 #def calc
 #	a = params[:a].to_i
