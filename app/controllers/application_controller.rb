@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 def sums
 	
-	csv = CSV.parse(params[:file].read, converters: :numeric)
+	csv = CSV.parse(params[:file], converters: :numeric)
         
 	sum = 0  
 	csv.each do |row|
