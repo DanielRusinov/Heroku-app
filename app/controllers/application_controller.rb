@@ -5,12 +5,11 @@ class ApplicationController < ActionController::Base
 
 def sums
 	
-	csv = CSV.parse(params[:file].read, converters: :numeric)
-		
-	sum = 0
-	csv.each do |row|
-		sum = sum + row[0].to_f
-	end
+	arr = CSV.parse(params["file"].read, converters: :numeric)
+        sum = 0
+        for i in 0..arr.length - 1
+            sum += arr[i][0] 
+        end
 
 	render plain: "%.2f" % sum.ceil
 
