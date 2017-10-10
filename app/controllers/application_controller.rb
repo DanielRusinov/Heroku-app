@@ -4,15 +4,16 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :null_sessions
 
 def sums
-	csv_file = params[:file].read
+	
 	csv = CSV.parse(params[:file].read, converters: :numeric)
 		
 	sum = 0
-	for i in 0..csv.length - 1
-            sum += arr[i][0] 
-        end
+	csv.each do |row|
+		sum = sum + row[0].to_f
+	end
 
 	render plain: "%.2f" % sum.ceil
+
 end
 
 end 
