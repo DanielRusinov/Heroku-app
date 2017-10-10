@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :null_sessions
 
 def sums
-	csv_file = File.read(params[:file])
+	csv_file = (params[:file].read
 	csv = CSV.parse(csv_file, converters: :numeric)
 	
 	sum = 0
