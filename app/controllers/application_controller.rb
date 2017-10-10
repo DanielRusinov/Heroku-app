@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	protect_from_forgery with: :exception
 
 def calc
 	a = params[:a].to_i
@@ -14,9 +15,9 @@ def quad
 
 	d = b*b - 4*a*c;
 
-	if( a < 0)
+	if( d < 0)
 		puts "Diskriminantata e pod 0 e pedal"
-	elsif( a == 0)
+	elsif( d == 0)
 		x = -b / (2 * a)
 	else x = (-b + Math.sqrt(d)) / (2 * a)
 		y = (-b - Math.sqrt(d)) / (2 * a)
@@ -25,7 +26,7 @@ def quad
 	render html: "x1 = #{x}, x2 = #{y}"  
 end
 
-  protect_from_forgery with: :exception
+  
 end
 
 
