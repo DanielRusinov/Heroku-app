@@ -7,13 +7,12 @@ def sums
 	csv_file = params["file"].read
 	csv = CSV.parse(csv_file, converters: :numeric)
 	
-	p cvs
 	sum = 0
 	csv.each do |row|
   		sum = sum + row[0].to_f
 	end
 	
-	render plain: "%.2f" %sum.ceil
+	render plain: "%.2f" % sum.ceil
 end
 
 end 
