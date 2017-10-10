@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 	 
-	post  '/sums' => 'application#sums'
+	match '/sums', :to => 'application#sums', :via => [:post]
  
 end
